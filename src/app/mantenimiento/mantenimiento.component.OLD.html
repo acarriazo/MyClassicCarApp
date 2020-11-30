@@ -1,0 +1,61 @@
+<p>mantenimiento works!</p>
+
+
+    <!-- Botones para acciones sobre datos -->   
+            
+                <button type="button" (click)="sendGetRequest()">Get</button>
+                
+                <br>
+                <br>
+                
+                <button type="button" (click)="sendPostRequest()">Post New</button>
+            
+            
+            <br>
+            <br>
+                
+              
+                <button type="button" (click)="sendDeleteRequest(producto_borrar.value)">Delete 'id'</button>
+                <input #producto_borrar type="text" id="producto_borrar" name="producto_borrar "maxlength="4" size="4"><br><br>
+                
+                
+                <button type="button" (click)="sendPutRequest(producto_sustituir.value)">Put id (update/replace fully)</button>
+                <input #producto_sustituir type="text" id="producto_sustituir" name="producto_sustituir "maxlength="4" size="4"><br><br>
+                
+                <button type="button" (click)="sendPatchRequest(producto_modificar.value)">Patch  id (update/modify partial)</button>
+                <input #producto_modificar type="text" id="producto_modificar" name="producto_modificar "maxlength="4" size="4"><br><br>
+                
+
+
+<div class="filabotones">    
+  <button type="button" class="btn btn-warning"(click)="abreFormularioPost()">Formulario Post - Nuevo</button>
+  <button type="button" class="btn btn-warning"(click)="abreFormularioPut()">Formulario Put - Modificar</button>
+      <form>
+              <div class="input-group mb-3 row">
+        <div class="input-group-prepend">
+          <button class=" btn btn-warning " type="button" (click)="sendDeleteRequest(producto_borrar.value)">Borrar por 'id'</button>
+        </div>
+
+        <input #producto_borrar type="text" class="form-control col-4 input-lg" id="producto_borrar" name="producto_borrar" maxlength="4" >
+      </div>
+       </form>
+</div>
+
+               
+            
+
+                <ul class="car-list">
+    <li *ngFor="let coche of listaCoches | paginate: { itemsPerPage: 5, currentPage: page }">
+                    <div class="middle">
+                            <div class="listado"><b>Id: {{coche.id}}</b></div>
+                            <div class="listado"><b>Modelo </b></div>
+                            <div class="listado">{{coche.Name | titlecase}}</div>
+                            <div class="listado">Potencia: {{coche.Horsepower}} C.V.</div>
+                    </div>
+    </li>
+</ul>
+<div class="has-text-centered">
+    <pagination-controls (pageChange)="page = $event" responsive="true" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+</div>   
+
+

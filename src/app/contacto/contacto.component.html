@@ -1,0 +1,46 @@
+<!-- Formulario con validación solo Bootstrap - REVISAR !!! -->
+
+<div class="container datosContacto">
+
+  <form class="was-validated" [formGroup]="formularioContacto" (ngSubmit)="onSubmit()">
+  
+    <div class="form-group">
+      <input class="form-control" name = "nombreCompleto" placeholder = "Nombre y Apellidos" formControlName="nombreCompleto" required>
+      <div class="valid-feedback">Correcto.</div>
+      <div class="invalid-feedback">Tienes que rellenar este campo.</div>
+    </div>
+    
+    <div class="form-group">
+      <input class="form-control" type = "email" name = "email" placeholder = "em@il" formControlName="email"  required>
+      <div class="valid-feedback">Correcto.</div>
+      <div class="invalid-feedback">Tienes que rellenar este campo.</div>
+    </div>
+    
+    <div class="form-group">
+      <textarea class="form-control" name = "mensaje" placeholder = "Mensaje" formControlName="mensaje" required ></textarea>
+      <div class="valid-feedback">Correcto.</div>
+      <div class="invalid-feedback">Tienes que rellenar este campo.</div>
+    </div>
+    
+    <button type="submit" class="btn botones">Enviar</button>
+    
+  </form>
+  
+</div>
+
+<!-- Mapa -->
+<div class="mapouter">
+
+    <div class="map-responsive">
+        
+        <iframe src="https://maps.google.com/maps?q=Tres%20Cantos&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+        </iframe>
+        
+    </div>
+
+</div>
+
+
+
+
+

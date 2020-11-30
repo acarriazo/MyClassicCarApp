@@ -1,0 +1,106 @@
+<h2><p class="tituloSecundario">MODELOS</p></h2>
+
+ 
+<!-- Campo de búsqueda -->
+ 
+ <div class="input-group col-md-4">
+      <input class="form-control py-2" type="search" value="buscar" id="search-input" [formControl]="filtroCoche" (search)="resetSearch()">
+      
+      <span class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="onSubmit(filtroCoche)"  [disabled]="botonDesactivado">
+            <i>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="botonBuscar">
+  <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+  <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+</svg>
+            </i>
+        </button>
+      </span>
+</div>
+
+ <!-- Tabla de datos -->
+ 
+ <div class="tablaDatos table-responsive">
+
+    <table class="table table-striped table-hover bg-muted rounded">
+        <thead>
+            <tr class="bg-info cabeceraGeneral ">
+                <th scope="col">id</th>
+                <th scope="col">Nombre Modelo</th>
+                <th scope="col">Cilindros</th>
+                <th scope="col">Potencia</th>
+                <th scope="col">Aceleración</th>
+                <th scope="col">Año</th>
+                <th scope="col">Origen</th>
+            </tr>
+            
+            <tr class="bg-info cabeceraMovil ">
+                <th scope="col">id</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Cil.</th>
+                <th scope="col">Pot.</th>
+                <th scope="col">Acel.</th>
+                <th scope="col">Año</th>
+                <th scope="col">Origen</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let coche of listaCoches | paginate: { itemsPerPage: 5, currentPage: page }; index as i" (click)="open(mymodal)">
+  
+        <!-- Lanzador modal de imágenes -->
+                <ng-template #mymodal let-modal>
+                  <!-- <div class="modal-header">
+                       <h4 class="modal-title" id="modal-basic-title">Classic Car</h4>
+                       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button> 
+                    </div> -->
+                    
+                    <div class="modal-body">
+                        <p class="modalNombre">{{ coche.Name }}</p>
+                        <img src="{{ coche.Url }}" class="mr-2 rounded imagenModal">
+                        <p class="modalTexto">{{ coche.Text }}</p>
+                        <hr class="linea">
+                        <p class="modalDetalles">Nº de Cilindros: {{ coche.Cylinders }}</p>
+                        <p class="modalDetalles">Potencia (CV): {{ coche.Horsepower }}</p>
+                        <p class="modalDetalles">Aceleración (0-100 Km/h): {{ coche.Acceleration }}</p>
+                        <p class="modalDetalles">Año: {{ coche.Year }}</p>
+                        <p class="modalDetalles">Origen: {{ coche.Origin }}</p>
+                        <button type="button" class="btn centrado botones" (click)="modal.close('Save click')">Cerrar</button>
+                    </div>
+                    
+               <!--     <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cerrar</button>
+                    </div> -->
+                </ng-template>
+
+   
+                <td>{{ coche.id }}</td>
+                <td>
+                    <img src="{{ coche.Url }}" class="mr-2 rounded" style="width: 80px" >
+                    {{ coche.Name }}
+                </td>
+                <td>{{ coche.Cylinders | number }}</td>
+                <td>{{ coche.Horsepower | number }}</td>
+                <td>{{ coche.Acceleration | number }}</td>
+                <td>{{ coche.Year }}</td>
+                <td>{{ coche.Origin }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="has-text-centered">
+        <pagination-controls (pageChange)="page = $event" responsive="true" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+    </div>
+
+ </div>
+     
+
+            
+            
+ 
+
+         
+            
+          

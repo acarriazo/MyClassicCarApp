@@ -1,0 +1,100 @@
+
+ <!-- Grid -->
+ 
+<div class="container-fluid">
+  <!-- <div class="container-fluid principal"> -->
+  
+  <div class="container-fluid ">
+ 
+    <div class="row">
+       
+        <div class="col-lg">
+            <div class="row"><p class="tituloGrid">Leyendas</p><p class="textoGridUno">Nuestra web de coches clásicos que te ofrece fotos e información sobre la épica del automovilismo.
+
+Aquí conocerás emocionantes historias por explicar y un denominador común: la pasión por los automóviles y la minuciosa selección de los modelos clásicos.</p></div>
+
+            <hr class="linea" id="linea1"> <!-- línea -->
+
+            <div>
+                <button type="button" id="boton1" class="btn btn-lg btn-block botones textoBoton" routerLink="/todos" routerLinkActive="active">Elige tu coche ...</button>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6"><img class="imgGrid rounded" alt="Bootstrap Image Preview" src={{imagenFrente}} />
+                </div>
+                <div class="col-lg-6"><p class="textoGridDos">Aunque existen muchos modelos legendarios, algunos resaltan por su fabricación limitada, otros por su diseño espectacular y otros por sus apariciones en la televisión y el cine.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg">
+                           
+                 <ngb-carousel 
+                    [showNavigationArrows]="true" 
+                    [showNavigationIndicators]="true"
+                    interval="5000"
+                    [keyboard]="true"
+                    [pauseOnHover]="true"
+                    [wrap]="true"
+                    [activeId]="'secondSlide'">
+                    <ng-template ngbSlide *ngFor="let imagen of arrayImagenesCarrusel">
+	                    <img class="rounded" [src]="imagen" alt="{{imagen}}"/>
+                    </ng-template>
+                </ngb-carousel>
+                            
+        </div>        
+
+    </div>
+    <hr class="linea"> <!-- línea -->  
+  </div>
+  
+</div>    
+    
+                
+    <div class="container-fluid" id="filaDos">
+        <p class="tituloGridDos centrado">Los comienzos...</p>
+        <p class="textoGridUno centrado">La historia del automóvil comienza con el modelo Benz Patent-Motorwagen, creado por Karl Benz en 1885. No obstante, la verdadera revolución sucedió cuando Henry Ford comenzó a producir en masa sus modelos T más de diez años después. Desde entonces las diferentes marcas han tratado de superarse las unas a las otras en potencia, diseño y comodidad; pero ninguna ha podido superar a los automóviles clásicos de la edad de oro del automovilismo.</p>
+    </div>
+
+
+<div class="container-fluid">
+  <!-- <div class="container-fluid principal"> -->
+  
+  <div class="container-fluid ">
+  
+      
+    <div class="row">
+    
+    
+<!-- Foto Grid Mosaico -->
+
+            
+        <div class="masonry">
+                <div class="item zoom" *ngFor="let imagen of arrayImagenesMosaico1">
+                    <img class="rounded" [src]="imagen" alt="{{imagen}}"/>
+                </div>
+                <div class="item zoom arrayImagenesMosaico2" *ngFor="let imagen of arrayImagenesMosaico2">
+                    <img class="rounded" [src]="imagen" alt="{{imagen}}"/>
+                </div>
+                <div class="item zoom arrayImagenesMosaico3" *ngFor="let imagen of arrayImagenesMosaico3">
+                    <img class="rounded" [src]="imagen" alt="{{imagen}}"/>
+                </div>
+  
+
+
+  </div>  
+</div>
+
+   
+  </div>
+</div>
+
+
+
+<div class="parallax">
+  <div class="parallax-curtain tituloGridDos centrado"><p>Classic Motor Passion</p>
+  </div>
+</div>
+
+  

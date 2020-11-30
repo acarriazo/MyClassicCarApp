@@ -1,0 +1,95 @@
+
+
+<!--
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 mt-3">
+                                    <div class="card">
+                                        <div class="card-horizontal">
+                                            <div class="img-square-wrapper">
+                                                <img class="imgCarruselPequeña rounded" [src]="coche.Url" alt="{{coche.Url}}"/>
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title">{{coche.Name}}</h4>
+                                                <p class="card-text">{{coche.Text}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <p class="sliderDetalles">Nº de Cilindros: {{ coche.Cylinders }}</p>
+                                            <p class="sliderDetalles">Potencia (CV): {{ coche.Horsepower }}</p>
+                                            <p class="sliderDetalles">Aceleración (0-100 Km/h): {{ coche.Acceleration }}</p>
+                                            <p class="sliderDetalles">Año: {{ coche.Year }}</p>
+                                            <p class="sliderDetalles">Origen: {{ coche.Origin }}</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+--> 
+
+
+        <div class="col-lg">
+                           
+                 <ngb-carousel class="carruselPequeño"
+                 
+                    [showNavigationArrows]="true" 
+                    [showNavigationIndicators]="false"
+                    interval="5000"
+                    [keyboard]="true"
+                    [pauseOnHover]="true"
+                    [wrap]="true"
+                    [activeId]="'secondSlide'">
+                    
+                    <ng-template ngbSlide *ngFor="let coche of listaCoches">
+                    
+                    <div id="accordion">
+                          <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title centrado">{{coche.Name}}</h3>
+                            </div>
+                            <div class="card-header">
+                                <img class="imgCarruselPequeña rounded" [src]="coche.Url" alt="{{coche.Url}}"/>
+                            </div>
+                          
+                            <div class="card-header">
+                              <h5 class="mb-0">
+                                <button class="btn botones" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Historia
+                                </button>
+                              </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p class="card-text">{{coche.Text}}</p>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header">
+                              <h5 class="mb-0">
+                                <button class="btn botones collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  Detalles técnicos
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-footer">                                                        
+                                    <p class="sliderDetalles">Nº de Cilindros: {{ coche.Cylinders }}</p>
+                                    <p class="sliderDetalles">Potencia (CV): {{ coche.Horsepower }}</p>
+                                    <p class="sliderDetalles">Aceleración (0-100 Km/h): {{ coche.Acceleration }}</p>
+                                    <p class="sliderDetalles">Año: {{ coche.Year }}</p>
+                                    <p class="sliderDetalles">Origen: {{ coche.Origin }}</p>
+                                </div>
+                            </div>
+                          </div>
+
+                 </div>
+                    
+
+
+                    </ng-template>
+                </ngb-carousel>
+                            
+        </div> 

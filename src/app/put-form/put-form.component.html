@@ -1,0 +1,76 @@
+<!-- incluye validación de datos -->
+
+<h4 class="tituloSecundario">Formulario PUT - Modificación.</h4>
+
+<div class="container put-postForm rounded">
+
+    <form class="form-inline was-validated" [formGroup]="formularioCoche" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">  
+            <input  class="form-control"  type="text" placeholder = "id" formControlName="idCoche" required>
+            <div class="valid-feedback">Correcto.</div>
+            <div class="invalid-feedback">Tienes que rellenar este campo.</div> 
+        </div>
+        
+        <div class="form-group dropdown"> 
+            <button class="btn botones dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Elige coche  </button>
+            <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton">
+    <a  *ngFor="let coche of listaCoches" class="dropdown-item" (click)="dropdownSeleccionado(coche)">{{coche.id}}  {{coche.Name}}</a>
+            </div> 
+            <input  class="form-control"  type="text" placeholder = "Nombre Modelo" formControlName="nombreCoche" required>
+            <div class="valid-feedback">Correcto.</div>
+            <div class="invalid-feedback">Tienes que rellenar este campo.</div> 
+        </div>
+        
+        <div class="form-group">  
+            <textarea id="inputTexto" class="form-control"  type="text" placeholder = "Texto Modelo" formControlName="textoCoche" required></textarea>
+            <div class="valid-feedback">Correcto.</div>
+            <div class="invalid-feedback">Tienes que rellenar este campo.</div> 
+        </div>
+
+        <div class="form-group">  
+            <input  class="form-control"  type="text" placeholder = "Url Foto Modelo" formControlName="urlCoche" required>
+            <div class="valid-feedback">Correcto.</div>
+            <div class="invalid-feedback">Tienes que rellenar este campo.</div> 
+        </div>
+
+        <div class="form-group">  
+            <input  class="form-control"  type="text" placeholder = "Núm. cilindros" formControlName="cilindrosCoche" required>
+            <div class="valid-feedback">Correcto.</div>
+            <div class="invalid-feedback">Tienes que rellenar este campo.</div> 
+        </div>
+  
+        <div class="form-group">  
+            <input  class="form-control"  type="text" placeholder = "Potencia" formControlName="potenciaCoche" required>
+            <div class="valid-feedback">Correcto.</div>
+            <div class="invalid-feedback">Tienes que rellenar este campo.</div> 
+        </div>
+  
+        <div class="form-group">  
+            <input  class="form-control"  type="text" placeholder = "Aceleración" formControlName="aceleracionCoche" required>
+            <div class="valid-feedback">Correcto.</div>
+            <div class="invalid-feedback">Tienes que rellenar este campo.</div> 
+        </div>
+  
+        <div class="form-group">  
+            <input  class="form-control"  type="text" placeholder = "Año" formControlName="añoCoche" required>
+            <div class="valid-feedback">Correcto.</div>
+            <div class="invalid-feedback">Tienes que rellenar este campo.</div> 
+        </div>
+  
+        <div class="form-group">  
+            <input  class="form-control"  type="text" placeholder = "Origen" formControlName="origenCoche" required>
+            <div class="valid-feedback">Correcto.</div>
+            <div class="invalid-feedback">Tienes que rellenar este campo.</div> 
+        </div>
+
+        <div id="btnFormulario">  
+            <button class="btn botones" type="submit" [disabled]="!formularioCoche.valid">Enviar</button>
+            <p>Estado del formulario: {{ formularioCoche.status }}</p>
+        </div>
+        
+</form>
+
+
+</div> 
+

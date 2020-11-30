@@ -1,0 +1,25 @@
+
+
+<div class="filabotones" id="divBtnMantenimiento">    
+  <button type="button" class="btn botones"(click)="abreFormularioPost()">Formulario Post - Nuevo</button>
+  <button type="button" class="btn botones"(click)="abreFormularioPut()">Formulario Put - Modificar</button>
+    <form>
+        <div class="input-group mb-3 row">
+            <div class="input-group-prepend">
+                <button class=" btn botones " type="button" (click)="sendDeleteRequest(producto_borrar.value)">Borrar por 'id'</button>
+            </div>
+            <input #producto_borrar type="text" class="form-control col-4 input-lg" id="producto_borrar" name="producto_borrar" maxlength="4" >
+        </div>
+    </form>
+</div>
+
+<div class="divImgMantenimiento">
+    <img class="imagenMantenimiento" src="https://www.autonocion.com/wp-content/uploads/2016/08/Mantenimiento-motor-turbo-4.jpg">
+</div>
+
+
+
+               
+
+
+
