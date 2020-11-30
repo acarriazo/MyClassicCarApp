@@ -22,8 +22,8 @@ import { CarClass } from '../models/car.model';
 //Clase aplicable a "cars"
 export class ServicioDatosCarService {
 
-  //private REST_API_SERVER = "https://my-json-rest-server.herokuapp.com/cars";
-  private REST_API_SERVER = "http://localhost:3000/cars";
+  private REST_API_SERVER = "https://my-json-rest-server.herokuapp.com/cars";
+  //private REST_API_SERVER = "http://localhost:3000/cars";
  
   private ngUnsubscribe = new Subject();
 
